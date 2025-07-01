@@ -22,6 +22,7 @@ module.exports = {
   ],
   rules: {
     // regras personalizadas
+    //"@typescript-eslint/no-explicit-any": ""
   },
   ignorePatterns: [
     'node_modules/',
