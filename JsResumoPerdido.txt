@@ -1,0 +1,257 @@
+
+---
+
+## 🔹 Seção 4: JavaScript Funções (Avançado)
+
+### ✅ Conceitos-chave:
+
+* **Declaração de funções**:
+
+  ```js
+  function saudacao() {
+    console.log("Olá!");
+  }
+  ```
+
+* **Expressões de função**:
+
+  ```js
+  const saudacao = function() {
+    console.log("Olá!");
+  };
+  ```
+
+* **Funções anônimas** e **auto-executáveis (IIFE)**:
+
+  ```js
+  (function() {
+    console.log("Executada automaticamente");
+  })();
+  ```
+
+* **Arrow functions** (funções de flecha):
+
+  ```js
+  const soma = (a, b) => a + b;
+  ```
+
+* **Callback functions**:
+  Funções passadas como argumento para outra:
+
+  ```js
+  setTimeout(() => console.log("Executado depois"), 1000);
+  ```
+
+* **Funções de alta ordem**:
+  Funções que retornam ou recebem outras funções.
+
+  ```js
+  const criarSaudacao = nome => () => console.log(`Olá, ${nome}`);
+  ```
+
+* **Closures**:
+  Uma função que “lembra” do seu escopo de criação:
+
+  ```js
+  function contador() {
+    let cont = 0;
+    return function() {
+      cont++;
+      console.log(cont);
+    };
+  }
+  ```
+
+---
+
+## 🔹 Seção 5: JavaScript Arrays (Avançado)
+
+### ✅ Métodos úteis de array:
+
+* `.map()`: transforma os elementos
+* `.filter()`: filtra com base numa condição
+* `.reduce()`: reduz a um valor (ex: somar todos)
+* `.forEach()`: percorre elementos sem retorno
+* `.find()`, `.some()`, `.every()`, `.includes()`, `.indexOf()`
+
+```js
+const numeros = [1, 2, 3];
+const dobrados = numeros.map(n => n * 2); // [2, 4, 6]
+```
+
+### ✅ Outros conceitos:
+
+* **Spread/rest operator**: `...`
+* **Desestruturação**:
+
+  ```js
+  const [a, b] = [1, 2];
+  const { nome } = { nome: "João" };
+  ```
+
+---
+
+## 🔹 Seção 6: Objetos e Prototypes (Avançado)
+
+### ✅ Objetos:
+
+```js
+const pessoa = {
+  nome: "Ana",
+  falar() {
+    console.log(`Olá, meu nome é ${this.nome}`);
+  }
+};
+```
+
+### ✅ Propriedades dinâmicas:
+
+```js
+pessoa["idade"] = 25;
+```
+
+### ✅ Prototype chain:
+
+Todo objeto herda de `Object.prototype` por padrão. Conceito de **herança prototipal**.
+
+### ✅ `Object.create()` e `__proto__`:
+
+```js
+const pai = { sobrenome: "Silva" };
+const filho = Object.create(pai);
+```
+
+---
+
+## 🔹 Seção 7: Classes – Programação Orientada a Objetos (POO)
+
+### ✅ Sintaxe de Classes:
+
+```js
+class Pessoa {
+  constructor(nome) {
+    this.nome = nome;
+  }
+
+  falar() {
+    console.log(`Olá, sou ${this.nome}`);
+  }
+}
+```
+
+### ✅ Herança:
+
+```js
+class Funcionario extends Pessoa {
+  constructor(nome, cargo) {
+    super(nome);
+    this.cargo = cargo;
+  }
+}
+```
+
+### ✅ Encapsulamento com `#` (privado):
+
+```js
+class Conta {
+  #saldo = 0;
+  depositar(valor) {
+    this.#saldo += valor;
+  }
+}
+```
+
+---
+
+## 🔹 Seção 8: JavaScript Assíncrono – Promises, Ajax, Fetch e Async/Await
+
+### ✅ Callback Hell:
+
+Chamadas aninhadas dificultam manutenção.
+
+### ✅ Promises:
+
+```js
+const promessa = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Sucesso"), 1000);
+});
+```
+
+### ✅ Fetch API:
+
+```js
+fetch("https://api.exemplo.com")
+  .then(resp => resp.json())
+  .then(data => console.log(data));
+```
+
+### ✅ Async / Await:
+
+```js
+async function carregarDados() {
+  const resposta = await fetch("url");
+  const dados = await resposta.json();
+}
+```
+
+---
+
+## 🔹 Seção 9: Tooling e Módulos ES6
+
+### ✅ Módulos:
+
+* **Import/export**:
+
+```js
+// utils.js
+export const somar = (a, b) => a + b;
+
+// app.js
+import { somar } from './utils.js';
+```
+
+### ✅ Tooling:
+
+* **Babel**: transpila ES6+ para navegadores antigos
+* **Webpack**: empacotador de módulos
+* **ESLint**: linting (boas práticas)
+* **Prettier**: formatação automática
+
+---
+
+## 🔹 Conceitos Extras Importantes de Lógica em JavaScript
+
+### ✅ Tipos de dados:
+
+* **Primitivos**: string, number, boolean, null, undefined, symbol, bigint
+* **Referência**: arrays, objetos, functions
+
+### ✅ Estruturas de controle:
+
+* `if`, `else`, `switch`
+* `for`, `while`, `do...while`
+* `break`, `continue`
+
+### ✅ Operadores:
+
+* **Aritméticos**: `+`, `-`, `*`, `/`, `%`
+* **Comparação**: `==`, `===`, `!=`, `!==`, `<`, `>`
+* **Lógicos**: `&&`, `||`, `!`
+* **Ternário**: `condição ? valor1 : valor2`
+
+### ✅ Conversão de tipos:
+
+```js
+Number("10"); // 10
+String(10); // "10"
+Boolean(0); // false
+```
+
+### ✅ Curiosidades JS:
+
+* `NaN`, `null`, `undefined` têm diferenças sutis
+* `typeof null` retorna `"object"` (bug histórico)
+* `==` faz coerção de tipo; `===` é mais seguro
+
+---
+
