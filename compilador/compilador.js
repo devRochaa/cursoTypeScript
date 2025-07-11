@@ -20,4 +20,3 @@ function saudar(isManha) {
     }
     return saudadcao;
 }
-//# sourceMappingURL=compilador.js.map

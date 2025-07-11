@@ -122,4 +122,3 @@ console.log(primeiroNome, experiencia);
 //   .then(films => fetch(films[0]))
 //   .then(resFilm => resFilm.json())
 //   .then(filme => console.log(filme.title));
-//# sourceMappingURL=ecmascript.js.map

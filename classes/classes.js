@@ -154,7 +154,7 @@ c1.executar(2, 3, 4, 5);
 console.log(c1.getResultado());
 // singletown
 //voce cria uma unica instancia dentro da classe para poder ser usada atraves do getinstance()
-//serve para ter uma unica instancia e tambpém trabalhar melhor com heranças
+//serve para ter uma unica (ou varias, caso de conexoes..) instancia e tambpém trabalhar melhor com heranças
 class Unico {
     constructor() { }
     static getInstance() {
@@ -167,4 +167,14 @@ class Unico {
 Unico.instance = new Unico;
 // const errado = new Unico();
 console.log(Unico.getInstance().agora()); //certo
-//# sourceMappingURL=classes.js.map
+//atributos somente leitura só pode setar uma vez
+class Aviao {
+    constructor(modelo, prefixo) {
+        this.prefixo = prefixo;
+        this.modelo = modelo;
+    }
+}
+const turboHelice = new Aviao('tu-114', 'pt-abc');
+// turboHelice.modelo = 'dc-8';
+// turboHelice.prefixo = 'pt-def';
+console.log(turboHelice);
