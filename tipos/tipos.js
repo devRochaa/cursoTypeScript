@@ -136,7 +136,7 @@ const produto = {
         }
     }
 };
-produto.validarProduto();
+//produto.validarProduto();
 let altura = 12;
 //altura = null
 let alturaOpcional = 12;
@@ -146,6 +146,21 @@ const contato1 = {
     tel1: '999090909',
     tel2: null,
 };
-let podeSerNulo = null; //anny!
+let podeSerNulo = null; //any!
 podeSerNulo = 12;
+;
 podeSerNulo = 'abc';
+let contaBancaria = {
+    saldo: 3456,
+    depositar(valor) {
+        this.saldo += valor;
+    }
+};
+let correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '98765432']
+};
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);
+//# sourceMappingURL=tipos.js.map
