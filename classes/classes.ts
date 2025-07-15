@@ -1,4 +1,4 @@
-class Data {
+export class Data {
   //publico por padrão
   dia: number
   public mes: number

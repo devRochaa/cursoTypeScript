@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Data = void 0;
 class Data {
     constructor(dia = 1, mes = 1, ano = 1970) {
         this.dia = dia,
@@ -6,6 +8,7 @@ class Data {
             this.ano = ano;
     }
 }
+exports.Data = Data;
 const aniversario = new Data(3, 11, 1991);
 aniversario.dia = 4;
 console.log(aniversario.dia);
